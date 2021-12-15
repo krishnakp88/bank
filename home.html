@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Federal Bank-Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQni
+    kT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body onload="bank.getUser()">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #00488E;">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="./Images/2560px-Federal_bank_India.svg.png" alt="" width="200" height="50">
+			</a>
+			<span class="navbar-text ps-2 text-white">
+				KPD Building, Olavakkode Main Rd, <br>
+				Olavakode, Palakkad, <br>
+				Kerala 678002
+			</span>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+				<a class="nav-link text-white" aria-current="page" href="#">Personal</a>
+				<a class="nav-link text-white" href="#">Corporate</a>
+				<a class="nav-link text-white" href="#">Business</a>
+				<a class="nav-link text-white" href="#">Tenders</a>
+				<a class="nav-link text-white" href="#">FAQs</a>
+				<a class="nav-link text-white" href="#">ContactUs</a>
+				<a class="nav-link text-white" onclick="bank.logout()">Logout</a>
+				<!-- <i class="fas fa-user-circle fa-2x"></i> -->
+			</div>
+		</div>
+	</nav>
+
+	
+	<div id="contain" class="container-fluid
+				align-items-center
+				justify-content-center d-flex";>
+
+		<div class="row w-100">
+			<div id="section"></div>
+
+			<div class="col-lg-4 mb-2">
+				<div class="card mx-auto" style="width:23rem;">
+					<img class="card-img-top" src="./Images/tech-daily-UODNyThs0vg-unsplash.jpg" alt="Card image cap">
+
+					<div class="card-body">
+						<h5 class="card-title text-center">
+							Fund Transfer
+						</h5>
+
+						<div class="text-center">
+							<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+								class="btn btn-primary">
+								Transfer now
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<h5 class="modal-title fw-bold mt-3 ms-4" id="exampleModalLabel">FUND TRANSFER - IMPS</h5>
+						<div class="modal-body">
+							<input type="text" id="to_acno"
+								class="form-control border-top-0 border-start-0 border-end-0"
+								placeholder="To Account Number">
+							<input type="text" id="confirm_acno"
+								class="form-control border-top-0 border-start-0 border-end-0 mt-3"
+								placeholder="Confirm To Account Number">
+							<input type="text" id="amount"
+								class="form-control border-top-0 border-start-0 border-end-0 mt-3" placeholder="Amount">
+							<div class="text-center">
+								<button type="button" onclick="bank.fundTransfer()"
+									class=" btn btn-primary mt-3">Proceed</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 mb-2">
+				<div class="card mx-auto" style="width:23rem;">
+					<img class="card" src="./Images/Budgets-And-Financial-Reports.jpg" alt="Card image cap">
+
+					<div class="card-body">
+						<h5 class="card-title text-center">
+							Balance Enquiry
+						</h5>
+
+						<p class="card-text text-center">
+							EXPLORE FED | 360
+						</p>
+
+						<div class="text-center">
+							<button type="button" onclick="bank.balanceEnquiry()" class="btn btn-primary">
+								View now
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 mb-2">
+				<div class="card mx-auto" style="width:23rem;">
+					<img class="card-img-top" src="./Images/towfiqu-barbhuiya-xkArbdUcUeE-unsplash.jpg"
+						alt="Card image cap">
+
+					<div class="card-body">
+						<h5 class="card-title text-center">
+							Payment History
+						</h5>
+
+
+						<div class="text-center">
+							<a href="#" class="btn btn-primary">
+								Check history
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer style="padding-top: 100px;" class="page-footer font-small blue">
+		<div class="footer-copyright text-center py-4 fw-bold">© 2021 Copyright
+			<a href="https://www.federalbank.co.in/"> federalbank.co.in</a>
+		</div>
+	</footer>
+
+
+
+</body>
+<script src="./Script.js"></script>
+
+</html>

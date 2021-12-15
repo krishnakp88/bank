@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,700;1,700&display=swap');
+body{
+    background-image: url(./Images/annie-spratt-yI3weKNBRTc-unsplash.jpg);
+    background-size: cover;
+}
+span{
+    font-size: small;
+}
+.container{
+    margin-top: 180px;
+}
+.carousel-inner{
+    margin-top: 170px;
+}
+.required{
+    color: red;
+}
+#hyper{
+    margin-top: 60px;
+}
+#contain{
+        margin-top: 163px;
+}
+#section{
+    text-align: center;
+    font-family: 'Ubuntu Mono', monospace;
+}
